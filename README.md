@@ -5,6 +5,7 @@ simple jQuery `scrolldelta` event plugin that is used in place of the `scroll` e
 
 [JS Fiddle](http://jsfiddle.net/tew9zxc1/)
 
+`
 $(window).on("scrolldelta", function(e)
 {
     var top = e.scrollTop;
@@ -14,7 +15,7 @@ $(window).on("scrolldelta", function(e)
 	
 	// your sweet ass code goes here
 });
-
+`
 
 ## requires
 
