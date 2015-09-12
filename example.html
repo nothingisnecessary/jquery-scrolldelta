@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><title></title></head>
+<body>
+<style type="text/css">
+#content {
+    /* make window tall enough for vertical scroll */
+    height: 2000px;
+    /* make window wide enough for horizontal scroll */
+    width: 2000px;
+    /* visualization of scrollable content */
+    background-color: blue;
+}
+#feedback {
+    border:2px solid red;
+    padding: 4px;
+    color: black;
+    position: fixed;
+    top: 0;
+    height: 20px;
+    background-color: #fff;
+    font-family:'Segoe UI', 'Arial';
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="jquery.scrolldelta.js" type="text/javascript"></script>
+<script type="text/javascript">
+// bind to custom 'scrolldelta' event
+$(window).on('scrolldelta', function (e) {
+    var top = e.scrollTop;
+    var topDelta = e.scrollTopDelta;
+    var left = e.scrollLeft;
+    var leftDelta = e.scrollLeftDelta;
+  // do stuff with the above info; for now just display it to user
+    var feedbackText = 'scrollTop: ' + top.toString() + 'px (' + (topDelta >= 0 ? '+' : '') + topDelta.toString() + 'px), scrollLeft: ' + left.toString() + 'px (' + (leftDelta >= 0 ? '+' : '') + leftDelta.toString() + 'px)';
+    document.getElementById('feedback').innerHTML = feedbackText;
+});
+</script>
+<div id='feedback'>scrollTop: 0px, scrollLeft: 0px</div>
+<div id='content'></div>
+</body>
+</html>
